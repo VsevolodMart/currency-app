@@ -1,0 +1,75 @@
+.button {
+  position: relative;
+  padding: 0 24px;
+  height: 42px;
+  border-radius: 8px;
+  border: none;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 17px;
+  background-color: transparent;
+  cursor: pointer;
+  min-width: 200px;
+
+  &-primary {
+    background-color: $ew-link;
+    color: $white;
+
+    &:hover {
+      background-color: $ew-clickable-text;
+      color: $white;
+    }
+  }
+
+  &-secondary {
+    background-color: $ew-background-hover;
+    color: $ew-link;
+
+    &:hover {
+      background-color: $ew-text-disabled;
+      color: $ew-clickable-text;
+    }
+  }
+
+  &-tertiary {
+    color: $ew-link;
+
+    &:hover {
+      color: $ew-clickable-text;
+    }
+  }
+
+  &-danger {
+    color: $ew-cancel;
+    background-color: $ew-background-hover;
+
+    &:hover {
+      background-color: $ew-text-disabled;
+      color: $ew-error;
+    }
+  }
+
+  &-disabled {
+    background-color: $ew-background-hover;
+    color: $ew-text-disabled;
+
+    &:hover {
+      background-color: $ew-background-hover;
+      color: $ew-text-disabled;
+    }
+  }
+
+  &-fluid {
+    height: 49px;
+    width: 100%;
+  }
+
+  a {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+}

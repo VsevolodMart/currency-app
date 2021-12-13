@@ -1,0 +1,276 @@
+.branding-header {
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 100000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 72px;
+  background-color: $ew-menu-bg;;
+  height: 64px;
+
+  @media screen and (max-width: 960px) {
+    padding: 0;
+    height: 48px;
+  }
+
+  .event {
+
+    .menu-title {
+      margin-left: 24px;
+    }
+
+    &-wrapper {
+      display: flex;
+      align-items: center;
+    }
+
+    &-logo {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      max-width: 64px;
+
+      @media screen and (max-width: 960px) {
+        height: 48px;
+      }
+
+      img {
+        width: 48px;
+        height: 48px;
+        object-fit: contain;
+        object-position: 50% 50%;
+      }
+    }
+
+    &-title {
+      font-style: normal;
+      font-weight: 600;
+      font-size: 18px;
+      line-height: 23px;
+      margin-left: 33px;
+      color: $ew-regular;
+      text-transform: uppercase;
+      max-height: 48px;
+      overflow: hidden;
+
+      @media (max-width: 960px) {
+        margin-left: 8px;
+      }
+      a {
+        color: $ew-regular;
+      }
+    }
+  }
+
+  .burger-icon {
+    overflow: hidden;
+    width: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 14px;
+    margin-right: 20px;
+
+    div {
+      width: 100%;
+      height: 0;
+      border: 1px solid $ew-link;
+      border-radius: 4px;
+      transition: all ease-out 0.5s;
+
+      &:first-child {
+        margin: 0;
+      }
+    }
+
+    @media screen and (min-width: 961px) {
+      display: none;
+    }
+
+    &-transform {
+      div:nth-child(1) {
+        transform: rotate(45.5deg) translate(4.5px, 4px);
+      }
+
+      div:nth-child(2) {
+        transform: translateX(-18px);
+      }
+
+      div:nth-child(3) {
+        transform: rotate(-45.5deg) translate(4.5px, -4px);
+      }
+    }
+  }
+
+  .content {
+    display: flex;
+    align-items: center;
+
+    @media screen and (max-width: 960px) {
+      display: none;
+    }
+
+    &-block {
+      display: inline-block;
+    }
+
+    &-dates {
+      display: flex;
+      align-items: center;
+      font-style: normal;
+      font-weight: 600;
+      font-size: 14px;
+      line-height: 17px;
+      color: $ew-regular;
+
+      span {
+        padding: 0 4px;
+      }
+    }
+
+    &-description {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: 294px;
+      white-space: nowrap;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 14px;
+      line-height: 17px;
+      color: rgba(0, 27, 36, 0.6);
+    }
+
+    &-user {
+      position: relative;
+      max-width: 294px;
+    }
+
+    &-user-holder {
+      display: flex;
+      align-items: center;
+
+      &::after {
+        content: "";
+        position: absolute;
+        left: calc(100% - 16px);
+        top: 50%;
+        margin-left: 6px;
+        border-style: solid;
+        border-width: 0 1px 1px 0;
+        border-color: $ew-link;
+        transform: translate(0, -75%) rotate(45deg);
+        width: 8px;
+        height: 8px;
+      }
+    }
+
+    &-user-block {
+      margin-left: 10px;
+      margin-right: 20px;
+    }
+
+    &-user-name {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: 200px;
+      white-space: nowrap;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 14px;
+      line-height: 17px;
+      color: $ew-regular;
+    }
+
+    &-user-description {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: 200px;
+      white-space: nowrap;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 10px;
+      line-height: 12px;
+    }
+
+    .dropdown-contact {
+      padding: 20px;
+      background-color: $white;
+      border-radius: 12px;
+      box-shadow: 0 30px 84px rgba(19, 10, 46, 0.08), 0 8px 32px rgba(19, 10, 46, 0.07), 0 3px 14px rgba(19, 10, 46, 0.03), 0 1px 3px rgba(19, 10, 46, 0.13);
+      position: absolute;
+      right: 0;
+      top: calc(100% + 8px);
+      width: 100%;
+      min-width: 150px;
+    }
+  }
+
+  .lang-picker {
+    margin-left: 24px;
+    margin-right: 32px;
+
+    /deep/ .title {
+      display: inline-flex;
+      align-items: center;
+      margin-right: 20px;
+
+      span {
+        border-radius: initial;
+        margin-right: 8px;
+      }
+
+      &::after {
+        border-color: $ew-link;
+      }
+    }
+  }
+
+  .fade-enter-active,
+  .fade-leave-active {
+    transition: opacity 0.5s;
+  }
+
+  .fade-enter,
+  .fade-leave-to {
+    opacity: 0;
+  }
+
+  .global-dropdown-menu {
+    position: absolute;
+    width: 100%;
+    top: 100%;
+    left: 0;
+    background-color: $white;
+    padding: 0 24px;
+    border-radius: 0 0 12px 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    max-height: 0;
+    height: auto;
+    overflow: hidden;
+    transition: all ease-out 0.5s;
+
+    .event-title,
+    .ew-button,
+    .content-block,
+    .lang-picker {
+      margin: 0 0 17px;
+    }
+
+  }
+
+  .black-layer {
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    top:100%;
+    left: 0;
+    background-color: $ew-regular;
+    opacity: 0.5;
+    z-index: -1;
+  }
+}

@@ -1,0 +1,89 @@
+<div class="branding-header">
+  <div class="event">
+    <h2
+      v-if="isShowGlobalDropdown"
+      class="menu-title"
+    >
+      Menu
+    </h2>
+    <div v-else class="event-wrapper">
+      <div class="event-logo"><img :src="logo" alt="" /></div>
+      <div class="event-title cur-p">{{ name }}</div>
+    </div>
+  </div>
+
+  <div class="content-wrapper">
+    <div
+      :class="{
+        'burger-icon-transform':isShowGlobalDropdown
+      }"
+      class="burger-icon"
+      @click="isShowGlobalDropdown = !isShowGlobalDropdown"
+    >
+      <div/>
+      <div/>
+      <div/>
+    </div>
+    <div class="content">
+      <div class="content-block">
+        <div class="content-description">
+          {{ location }}
+        </div>
+      </div>
+      <div
+        class="content-user"
+      >
+        <div
+          class="content-user-holder"
+          @click="onContentUserClick"
+        >
+          <div class="content-user-block">
+            <div class="content-user-name">
+              {{ mySelFullName }}
+            </div>
+          </div>
+        </div>
+        <transition name="fade">
+          <div
+            v-show="isShowDropdown"
+            class="dropdown-contact"
+          >
+            <div>
+              <Button
+                button-type="secondary"
+                :title="'Logout'"
+              />
+            </div>
+          </div>
+        </transition>
+      </div>
+    </div>
+  </div>
+
+  <div
+    ref="global-dropdown-menu"
+    class="global-dropdown-menu"
+    :style="{
+      overflow: isDropdownOverflowOverridden ? 'visible' : 'hidden',
+    }"
+  >
+    <div class="event-title">
+      {{ name }}
+    </div>
+    <div class="content-block">
+      <div class="content-description">
+        {{ location }}
+      </div>
+    </div>
+    <Button
+      button-type="secondary"
+      :title="'SignUp'"
+      @click.native="onContentUserClick"
+    />
+  </div>
+
+  <div
+    v-if="isShowGlobalDropdown"
+    class="black-layer"
+  />
+</div>

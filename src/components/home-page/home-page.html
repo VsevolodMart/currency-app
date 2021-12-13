@@ -1,0 +1,71 @@
+<div class="home-page">
+
+  <div class="section">
+    <div class="sub-section">
+      <div class="title">Select currency:</div>
+      {{ this.selectedCurrency }}
+    </div>
+    <div class="sub-section">
+      <div class="title">Select From:</div>
+      {{ this.range.start }}
+    </div>
+    <div class="sub-section">
+      <div class="title">Select to:</div>
+      {{ this.range.end }}
+    </div>
+    <div class="date-error" v-if="showDateError">
+      We don't know the future yet
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="sub-section">
+      <div class="title">Select currency</div>
+      <CSelect
+        :title="'date'"
+        :currency-list="currencyList"
+        @selected="setSelectedCurrency"
+      />
+    </div>
+    <div class="sub-section">
+      <div class="title">Select date</div>
+      <Button
+        button-type="secondary"
+        :title="'Show calendar'"
+        class="show-calendar-btn"
+        @click.native="showDateRangePicker"
+      />
+      <div class="float-block"
+           v-if="isShowDateRangePicker"
+           @clickout="isShowDateRangePicker=false">
+        <vc-date-picker
+          v-model="range"
+          is-range
+          :model-config="pickerConfig"
+          is-required
+        />
+      </div>
+    </div>
+    <div class="sub-section">
+      <div class="title">Actions</div>
+      <Button
+        button-type="primary"
+        :title="'Get rate'"
+        class="get-rate-btn"
+        @click.native="onHistoricalFXRatesClick"
+      />
+
+      <Button
+        button-type="primary"
+        :title="'Clear'"
+        @click.native="onClearAllClick"
+      />
+    </div>
+  </div>
+  <div class="section">
+    <LineChart class="chart" :chartdata="chartData" :options="{
+    responsive: true,
+    maintainAspectRatio: false
+  }"/>
+  </div>
+</div>

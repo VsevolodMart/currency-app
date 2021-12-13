@@ -1,0 +1,31 @@
+@import "node_modules/normalize-scss/sass/normalize";
+@include normalize();
+
+$ew-clickable-text: #14c7ff;
+$ew-clickable-text-hover: #00c2ff;
+$ew-link: #02acea;
+$ew-stroke-focused: rgba(0, 182, 248, 0.4);
+$ew-error: #ff3d00;
+$ew-cancel: #b12b00;
+$ew-confirm: #04b100;
+$ew-confirm-bg: #e8fbe8;
+$ew-input-bg: #fafbfc;
+$ew-menu-bg: #f9f9fb;
+$white: rgba(255, 255, 255, 0.95);
+$ew-attention-bg: #fffcba;
+
+$ew-regular: #001b24;
+$ew-stroke: rgba(0, 27, 36, 0.2);
+$ew-text-disabled: rgba(0, 27, 36, 0.4);
+$ew-secondary: rgba(0, 27, 36, 0.6);
+$ew-selected-point: rgba(0, 27, 36, 0.8);
+
+$ew-background-opacity: rgba(68, 56, 103, 0.04);
+$ew-background-hover: rgba(68, 56, 103, 0.08);
+$ew-background-disabled: rgba(0, 27, 36, 0.05);
+$ew-icon-secondary: rgba(0, 27, 36, 0.3);
+
+$ew-box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1);
+$ew-box-shadow-edge-contrast: 5px 4px 23px rgba(128, 132, 139, 0.0623907);
+$ew-box-shadow-hover: 0 5px 24px rgba(0, 0, 0, 0.2);
+$ew-control-popup-box-shadow: 3px 10px 50px 6px rgba(0, 0, 0, 0.27);

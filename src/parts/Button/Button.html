@@ -1,0 +1,8 @@
+<button
+  :class="[propButtonType, {'ew-button-disabled': disabled}, propTextColor, propButtonSize]"
+  :disabled="disabled"
+  class="button"
+  @click="handle()"
+>{{ title }}
+  <slot></slot>
+</button>

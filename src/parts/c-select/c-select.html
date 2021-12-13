@@ -1,0 +1,26 @@
+<div
+  class="custom-select"
+  :tabindex="tabindex"
+  @blur="open = false"
+>
+  <div
+    class="selected"
+    :class="{open: open}"
+    @click="open = !open"
+  >
+    {{ selected }}
+  </div>
+  <div
+    class="items"
+    :class="{selectHide: !open}"
+  >
+    <div
+      class="item"
+      v-for="(option, i) of currencyList"
+      :key="i"
+      @click="selected=option; open=false; $emit('selected', option)"
+    >
+      {{ option }}
+    </div>
+  </div>
+</div>

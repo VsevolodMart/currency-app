@@ -1,0 +1,57 @@
+.home-page {
+  background-color: $ew-stroke;
+  height: 100%;
+  padding-top: 30px;
+
+  .section {
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+    background-color: $white;
+    box-shadow: $ew-box-shadow;
+    padding: 30px;
+    height: max-content;
+    flex-flow: row wrap;
+
+    .sub-section {
+      min-width: 300px;
+      position: relative;
+      padding-bottom: 8px;
+
+      .title {
+        font-size: 14px;
+        font-weight: 400;
+        color: $ew-secondary;
+        padding-bottom: 8px;
+      }
+    }
+
+    .float-block {
+      position: absolute;
+      box-shadow: $ew-box-shadow;
+      background-color: $ew-menu-bg;
+      padding: 30px;
+      z-index: 99999;
+    }
+  }
+
+  .chart {
+    position: relative;
+    margin: auto;
+    height: auto;
+    width: 100%;
+  }
+
+  .get-rate-btn {
+    margin-right: 20px;
+  }
+
+  .show-calendar-btn {
+    margin-left: 20px;
+  }
+
+  .date-error {
+    color: $ew-error;
+  }
+}

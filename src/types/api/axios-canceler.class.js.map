@@ -1,0 +1,1 @@
+{"version":3,"file":"axios-canceler.class.js","sourceRoot":"","sources":["axios-canceler.class.ts"],"names":[],"mappings":"AAAA,OAAO,KAAgC,MAAM,OAAO,CAAC;AAErD,MAAM,WAAW,GAAG,KAAK,CAAC,WAAW,CAAC;AAEtC,MAAM,CAAC,OAAO,OAAO,aAAa;IAKhC;QACE,IAAI,CAAC,WAAW,GAAG,IAAI,WAAW,CAAC,CAAC,MAAgB,EAAE,EAAE;YACtD,IAAI,CAAC,MAAM,GAAG,MAAM,CAAC;QACvB,CAAC,CAAC,CAAC;IACL,CAAC;CAEF"}

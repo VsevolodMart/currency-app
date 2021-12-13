@@ -1,16 +1,27 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div id="app" class="app">
+    <template>
+      <BrandingHeader/>
+      <div class="main-container">
+        <router-view/>
+      </div>
+    </template>
+  </div>
 </template>
+<script lang="ts">
+import Component from 'vue-class-component';
+import { Vue } from 'vue-property-decorator';
+import BrandingHeader from "@/components/branding-header/branding-header.vue";
 
-<script>
-import HelloWorld from './components/HelloWorld.vue'
-
-export default {
+@Component({
   name: 'App',
-  components: {
-    HelloWorld
-  }
+  components: {BrandingHeader}
+})
+export default class App extends Vue {
+
+  public isAuthenticated: boolean;
+
+
 }
 </script>
 
@@ -19,8 +30,10 @@ export default {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  position:relative;
+}
+
+.main-container {
+  height: calc(100vh - 114px);
 }
 </style>
